@@ -8,32 +8,32 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Resources
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="/photos">Photos</a>
-            <a class="dropdown-item" href="/comments">Comments</a>
-            <a class="dropdown-item" href="/follow_requests">Follow Requests</a>
-            <a class="dropdown-item" href="/likes">Likes</a>
-          </div>
-          <ul class="navbar-nav">
           <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to "Edit #{current_user.username}", edit_user_registration_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
-            </li>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Resources
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/photos">Photos</a>
+              <a class="dropdown-item" href="/comments">Comments</a>
+              <a class="dropdown-item" href="/follow_requests">Follow Requests</a>
+              <a class="dropdown-item" href="/likes">Likes</a>
+            </div>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <%= link_to "Edit #{current_user.username}", edit_user_registration_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
+              </li>
 
             <% else %>
 
-            <li class="nav-item">
-              <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-            </li>
+              <li class="nav-item">
+                <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+              </li>
 
             <% end %>
           </ul>
