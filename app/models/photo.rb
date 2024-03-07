@@ -21,7 +21,6 @@
 #
 class Photo < ApplicationRecord
   belongs_to :owner, class_name: "User", counter_cache: true
-<<<<<<< HEAD
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :fans, through: :likes, dependent: :destroy
@@ -31,9 +30,4 @@ class Photo < ApplicationRecord
 
   scope :past_week, -> { where(created_at: 1.week.ago...) }
   scope :by_likes, -> { order(likes_count: desc) }
-=======
-  has_many :comments
-  has_many :likes
-  has_many :fans, through: :likes, inverse_of: :user
->>>>>>> refs/remotes/origin/ks-photogram-industrial-2
 end
