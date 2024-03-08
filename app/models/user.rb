@@ -28,7 +28,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :own_photos, class_name: "Photo", foreign_key: "owner_id", dependent: :destroy
-
   has_many :comments, foreign_key: "author_id", dependent: :destroy
 
   has_many :liked_photos, foreign_key: :fan_id, class_name: "Like", dependent: :destroy
