@@ -3,8 +3,9 @@ class PhotosController < ApplicationController
   before_action :set_photo, only: %i[ show edit update destroy ]
 
   # GET /photos or /photos.json
-  def index
-    @photos = Photo.all
+  def feed
+    user = current_user
+    @photos = user.feed
   end
 
   # GET /photos/1 or /photos/1.json
