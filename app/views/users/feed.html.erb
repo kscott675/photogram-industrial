@@ -1,0 +1,6 @@
+<h1>feed</h1>
+<p class="lead text-muted"> posts by people you follow </p>
+
+<% @user.feed.each do |photo| %>
+  <%= render "photos/photo", photo: photo %>
+<% end %>
