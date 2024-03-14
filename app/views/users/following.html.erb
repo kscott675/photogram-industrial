@@ -1,0 +1,7 @@
+<ul>
+  <% @user.leaders.each do |leader| %>
+    <li>
+      <a href="/<%= leader.username %>"> <%= leader.username %> </a>
+    </li>
+  <% end %>
+</ul>

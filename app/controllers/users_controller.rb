@@ -14,4 +14,12 @@ class UsersController < ApplicationController
       @user = current_user
     end
   end
+
+  def followers
+    @user = @user = User.find_by!(username: params.fetch(:username))
+  end
+
+  def following
+    @user = @user = User.find_by!(username: params.fetch(:username))
+  end
 end
