@@ -24,6 +24,7 @@
       <% if alert.present? %>
         <%= render partial: "shared/flash", locals: { message: alert, css_class: "danger" } %>
       <% end %>
+    
       <%= yield %>
     </div>
 

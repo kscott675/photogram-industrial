@@ -1,11 +1,8 @@
-<h1>
-  <%= @user.username %>
-</h1>
+<h1>feed</h1>
+<p class="lead text-muted"> posts by people you follow </p>
 
 <%= render partial:"shared/sub_nav", user: @user %>
 
-<h2>Own photos</h2>
-
-<% @user.own_photos.each do |photo| %>
+<% @user.feed.each do |photo| %>
   <%= render "photos/photo", photo: photo %>
 <% end %>
