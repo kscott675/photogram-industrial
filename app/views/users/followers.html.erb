@@ -1,7 +1,18 @@
-<ul>
-  <% @user.followers.each do |follower| %>
-    <li>
-      <a href="/<%= follower.username %>"> <%= follower.username %> </a>
-    </li>
-  <% end %>
-</ul>
+<%= render partial:"shared/sub_nav", user: @user %>
+
+
+<div class="container-fluid">
+  <div class="card text-center">
+    <div class="card-header">
+      Followers
+    </div>
+    <div class="card-body align-items-center justify-content-between">
+      <div class="list-group ">
+        <% @user.followers.each do |follower| %>
+          <a href="/<%= follower.username %>" class="list-group-item list-group-item-action" aria-current="true"> <%= follower.username %>
+          </a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

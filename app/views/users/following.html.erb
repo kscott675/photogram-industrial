@@ -1,7 +1,16 @@
-<ul>
-  <% @user.leaders.each do |leader| %>
-    <li>
-      <a href="/<%= leader.username %>"> <%= leader.username %> </a>
-    </li>
-  <% end %>
-</ul>
+<%= render partial:"shared/sub_nav", user: @user %>
+<div class="container-fluid">
+  <div class="card text-center">
+    <div class="card-header">
+      Following
+    </div>
+    <div class="card-body align-items-center justify-content-between">
+      <div class="list-group ">
+        <% @user.leaders.each do |leader| %>
+          <a href="/<%= leader.username %>" class="list-group-item list-group-item-action" aria-current="true"> <%= leader.username %>
+          </a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
